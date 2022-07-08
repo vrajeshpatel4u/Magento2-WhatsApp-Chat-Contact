@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <v4u_whatsappchat>
+            <whatsappchat>
+                <enable>1</enable>
+                <mobilenumber>+9194xxxxxxxx</mobilenumber>
+                <message>Hello! WhatsAppConnect Extension.</message>
+            </whatsappchat>
+        </v4u_whatsappchat>
+    </default>
+</config>

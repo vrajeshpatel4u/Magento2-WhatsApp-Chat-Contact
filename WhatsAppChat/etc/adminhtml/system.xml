@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="v4u" translate="label" sortOrder="10">
+            <label>WhatsAppChat</label>
+        </tab>
+        <section id="v4u_whatsappchat" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label">
+            <label>WhatsAppChat</label>
+            <tab>v4u</tab>
+            <resource>V4U_WhatsAppChat::whatsappchat</resource>
+            <group id="whatsappchat" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>WhatsApp Chat</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Module Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/ Disable WhatsApp Chat</comment>
+                </field>
+                <field id="mobilenumber" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>WhatsApp Number</label>
+                    <comment>Full Mobile Number In International Format. Example: +9194xxxxxxxx</comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="message" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default WhatsApp Message</label>
+                    <comment>Pre-filled Message</comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

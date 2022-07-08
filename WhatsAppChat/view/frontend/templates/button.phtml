@@ -1,0 +1,25 @@
+<?php $helper = $this->helper('V4U\WhatsAppChat\Helper\Data'); ?>
+
+<?php if($helper->getStatus() && $helper->getPhone() && $helper->getMessage()): ?>
+	<div id="whatsappchat">
+		<a href="https://web.whatsapp.com/send?phone=<?= $helper->getPhone(); ?>&amp;text=<?= $helper->getMessage(); ?>" onclick="gtag('event', 'WhatsApp', {'event_action': 'whatsapp_chat', 'event_category': 'Chat', 'event_label': 'Chat_WhatsApp'});" target="_blank" class="btn-web">
+			<img src="<?= $this->getViewFileUrl('V4U_WhatsAppChat::images/button.png'); ?>" alt="WhatsApp Chat Image">
+		</a>
+
+		<a href="https://wa.me/<?= $helper->getPhone(); ?>?text=<?= $helper->getMessage(); ?>" onclick="gtag('event', 'WhatsApp', {'event_action': 'whatsapp_chat', 'event_category': 'Chat', 'event_label': 'Chat_WhatsApp'});" target="_blank" class="btn-mobile">
+			<img src="<?= $this->getViewFileUrl('V4U_WhatsAppChat::images/button.png'); ?>" alt="WhatsApp Button">
+		</a>
+	</div>
+	<style type="text/css">
+		@media(max-width: 768px) {
+			#whatsappchat .btn-web{
+				display: none;
+			}
+		}
+		@media(min-width: 768px) {
+			#whatsappchat .btn-mobile{
+				display: none;
+			}
+		}
+	</style>
+<?php endif; ?>
